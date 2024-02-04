@@ -11,7 +11,7 @@ let userInput;
 
 /*-----onClick Actions-----*/
 
-checkButton.onClick() = checkPalindrome;
+checkButton.onclick = checkPalindrome;
 
 
 /*----Functions-----*/
@@ -19,9 +19,15 @@ checkButton.onClick() = checkPalindrome;
 function checkPalindrome(){
     userInput = document.getElementById("text-input");
 
-    let arrAux = userInput.split("");
+    let arrAux = [];
+
+    for(let i = 0; i<userInput.lenght; i++){
+        arrAux.push(userInput.charAt(i));
+    }
     
     let invertedArr = arrAux.reverse();
+
+    arrAux.forEach((element) =>console.log(element));
 
     if(arrAux === invertedArr){
         resultText.innerText = "It's a palindrome!";
